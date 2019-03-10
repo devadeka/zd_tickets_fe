@@ -5,6 +5,7 @@ import { Button } from '@zendeskgarden/react-buttons';
 import { Pagination } from '@zendeskgarden/react-pagination';
 import { Sidebar } from '@zendeskgarden/react-chrome';
 import { ThemeProvider } from '@zendeskgarden/react-theming';
+
 import React from 'react';
 
 const TicketsPanel = ({ tickets }) => {
@@ -17,7 +18,7 @@ const TicketsPanel = ({ tickets }) => {
         />
         <hr />
         {
-          tickets.map((ticket, index) => <div>
+          tickets.map((ticket, index) => <div key={index}>
             <Button stretched basic>{ticket.title}</Button>
           </div>)
         }

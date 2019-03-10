@@ -1,13 +1,14 @@
 import { Button } from '@zendeskgarden/react-buttons';
-import { Pagination } from '@zendeskgarden/react-pagination';
 import { mount } from 'enzyme';
+import { Pagination } from '@zendeskgarden/react-pagination';
 import React from 'react';
 import TicketsPanel from '../components/TicketsPanel';
 
 describe('<TicketDetailView />', () => {
   let ticketsPanel;
-
-  const tickets = [1, 2, 4].map(ticketNum => ({ title: `Ticket ${ticketNum}` }));
+  const tickets = [1, 2, 4].map(ticketNum => ({ 
+    title: `Ticket ${ticketNum}`
+  }));
 
   beforeEach( () => {
     ticketsPanel = mount(<TicketsPanel tickets={tickets} />);
