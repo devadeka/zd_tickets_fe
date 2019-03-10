@@ -6,7 +6,8 @@ import ArticlesPanel from './components/ArticlesPanel';
 import TitleBar from './components/TitleBar';
 
 const App = () => {
-  const articles = [1, 2, 3].map(() => ({
+  const articles = [1, 2, 3].map(elem => ({
+    id: elem,
     title: 'Loading...',
     body: '...'
   }));
