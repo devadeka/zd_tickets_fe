@@ -5,20 +5,21 @@ import { Button } from '@zendeskgarden/react-buttons';
 import { Pagination } from '@zendeskgarden/react-pagination';
 import { Sidebar } from '@zendeskgarden/react-chrome';
 import { ThemeProvider } from '@zendeskgarden/react-theming';
+
 import React from 'react';
 
-const TicketsPanel = ({ tickets }) => {
+const ArticlesPanel = ({ articlesData }) => {
   return (
     <ThemeProvider>
       <Sidebar style={{ padding: 28 }}>
         <Pagination
-          totalPages={5}
-          currentPage={1}
+          currentPage={articlesData.page}
+          totalPages={articlesData.page_count}
         />
         <hr />
         {
-          tickets.map((ticket, index) => <div key={index}>
-            <Button stretched basic>{ticket.title}</Button>
+          articlesData.articles.map((article, index) => <div key={index}>
+            <Button stretched basic>{article.title}</Button>
           </div>)
         }
       </Sidebar>
@@ -26,4 +27,4 @@ const TicketsPanel = ({ tickets }) => {
   );
 };
 
-export default TicketsPanel;
+export default ArticlesPanel;
