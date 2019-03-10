@@ -6,12 +6,30 @@ import React from 'react';
 
 describe('<ArticleDetailView />', () => {
   let articlesPanel;
-  const articles = [1, 2, 4].map(articleNum => ({ 
-    title: `Article ${articleNum}`
+
+  const setArticlesData = jest.fn();
+  const setSelectedArticle = jest.fn();
+
+  const articles = [1, 2, 3].map(elem => ({
+    id: elem,
+    title: `Article ${elem}`,
+    body: '...'
   }));
 
+  const articlesData = {
+    page: 1,
+    page_count: 5,
+    articles: articles
+  };
+
+
   beforeEach( () => {
-    articlesPanel = mount(<ArticlesPanel articles={articles} />);
+    articlesPanel = mount(
+      <ArticlesPanel 
+        articlesData={ articlesData }
+        setArticlesData={ setArticlesData }
+        setSelectedArticle={ setSelectedArticle }
+      />);
   });
 
   it('contains a <Pagination />', () => {
