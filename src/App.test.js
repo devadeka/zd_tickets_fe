@@ -1,9 +1,9 @@
-import { shallow } from 'enzyme';
 import App from './App';
-import React from 'react';
 import ArticleDetailView from './components/ArticleDetailView';
 import ArticlesPanel from './components/ArticlesPanel';
+import React from 'react';
 import TitleBar from './components/TitleBar';
+import { shallow } from 'enzyme';
 
 describe('<App />', () => {
   let app;

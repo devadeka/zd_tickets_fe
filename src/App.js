@@ -3,10 +3,14 @@ import {Body, Chrome, Content} from '@zendeskgarden/react-chrome';
 import React, { useState, useEffect } from 'react';
 import ArticleDetailView from './components/ArticleDetailView';
 import ArticlesPanel from './components/ArticlesPanel';
-import axios from 'axios';
 import TitleBar from './components/TitleBar';
+import axios from 'axios';
+
 
 const App = () => {
+  const domain = 'https://support.zendesk.com';
+  const path = '/api/v2/help_center/en-us/articles.json';
+
   const articles = [1, 2, 3].map(elem => ({
     id: elem,
     title: 'Loading...',
@@ -25,10 +29,11 @@ const App = () => {
   });
 
   useEffect(() => {
+    const query = `?per_page=10&page=${articlesData.page}`;
+
     axios
-      .get(`https://support.zendesk.com/api/v2/help_center/en-us/articles.json?per_page=10&page=${articlesData.page}`)
+      .get(`${domain}${path}${query}`)
       .then(response => setArticlesData(response.data))
-      .then(response => console.log(articlesData.page))
       .catch(error => console.log(error));
   }, [articlesData.page]);
 

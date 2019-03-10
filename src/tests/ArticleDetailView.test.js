@@ -1,6 +1,6 @@
 import ArticleDetailView from '../components/ArticleDetailView';
-import { shallow } from 'enzyme';
 import React from 'react';
+import { shallow } from 'enzyme';
 
 describe('<ArticleDetailView />', () => {
   let articleDetailView;
@@ -11,7 +11,10 @@ describe('<ArticleDetailView />', () => {
       body: 'test'
     };
 
-    articleDetailView = shallow(<ArticleDetailView selectedArticle={ selectedArticle } />).render();
+    articleDetailView = shallow(
+      <ArticleDetailView 
+        selectedArticle={ selectedArticle }
+      />).render();
   });
 
   it('contains a <h1 />', () => {
@@ -36,7 +39,10 @@ describe('<ArticleDetailView /> with html-string content', () => {
       body: '<h3>test</h3>'
     };
 
-    articleDetailView = shallow(<ArticleDetailView selectedArticle={ selectedArticle } />).render();
+    articleDetailView = shallow(
+      <ArticleDetailView 
+        selectedArticle={ selectedArticle }
+      />).render();
   });
 
   it('contains a <h3 />', () => {

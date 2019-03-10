@@ -1,8 +1,9 @@
+import { Pagination, Page } from '@zendeskgarden/react-pagination';
 import ArticlesPanel from '../components/ArticlesPanel';
 import { Button } from '@zendeskgarden/react-buttons';
-import { mount } from 'enzyme';
-import { Pagination, Page } from '@zendeskgarden/react-pagination';
 import React from 'react';
+import { mount } from 'enzyme';
+
 
 describe('<ArticleDetailView />', () => {
   let articlesPanel;
