@@ -9,7 +9,6 @@ import { ThemeProvider } from '@zendeskgarden/react-theming';
 import React, { useState } from 'react';
 
 const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) => {
-
   const [selectedKey, setSelectedKey] = useState('-1');
 
   const setPageNumber = pageNumber => setArticlesData({
