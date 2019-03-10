@@ -6,7 +6,12 @@ describe('<ArticleDetailView />', () => {
   let articleDetailView;
 
   beforeEach( () => {
-    articleDetailView = shallow(<ArticleDetailView title='Test' content='test' />).render();
+    const selectedArticle = {
+      title: 'Test',
+      body: 'test'
+    };
+
+    articleDetailView = shallow(<ArticleDetailView selectedArticle={ selectedArticle } />).render();
   });
 
   it('contains a <h1 />', () => {
@@ -17,12 +22,8 @@ describe('<ArticleDetailView />', () => {
     expect(articleDetailView.find('h2').text()).toEqual('Test');
   });
 
-  it('contains a <p />', () => {
-    expect(articleDetailView.find('p').length).toBe(1);
-  });
-  
-  it('displays correct content string', () => {
-    expect(articleDetailView.find('p').text()).toEqual('test');
+  it('contains a body test', () => {
+    expect(articleDetailView.text()).toContain('test');
   });
 });
 
@@ -30,7 +31,12 @@ describe('<ArticleDetailView /> with html-string content', () => {
   let articleDetailView;
 
   beforeEach( () => {
-    articleDetailView = shallow(<ArticleDetailView title='Test' content='<h3>test</h3>' />).render();
+    const selectedArticle = {
+      title: 'Test',
+      body: '<h3>test</h3>'
+    };
+
+    articleDetailView = shallow(<ArticleDetailView selectedArticle={ selectedArticle } />).render();
   });
 
   it('contains a <h3 />', () => {
