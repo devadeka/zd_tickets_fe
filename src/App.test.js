@@ -1,8 +1,8 @@
 import { shallow } from 'enzyme';
 import App from './App';
 import React from 'react';
-import TicketDetailView from './components/TicketDetailView';
-import TicketsPanel from './components/TicketsPanel';
+import ArticleDetailView from './components/ArticleDetailView';
+import ArticlesPanel from './components/ArticlesPanel';
 import TitleBar from './components/TitleBar';
 
 describe('<App />', () => {
@@ -16,11 +16,11 @@ describe('<App />', () => {
     expect(app.find(TitleBar).length).toBe(1);
   });
   
-  it('contains a <TicketsPanel />', () => {
-    expect(app.find(TicketsPanel).length).toBe(1);
+  it('contains a <ArticlesPanel />', () => {
+    expect(app.find(ArticlesPanel).length).toBe(1);
   });
 
-  it('contains a <TicketDetailView />', () => {
-    expect(app.find(TicketDetailView).length).toBe(1);
+  it('contains a <ArticleDetailView />', () => {
+    expect(app.find(ArticleDetailView).length).toBe(1);
   });
 });

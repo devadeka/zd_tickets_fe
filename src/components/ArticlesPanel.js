@@ -19,9 +19,7 @@ const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) =>
 
   const getArticleFromIdString = idString => articlesData
     .articles
-    .filter(
-      article => article.id === Number.parseInt(idString, 10)
-    )[0];
+    .filter(article => article.id === Number.parseInt(idString, 10))[0];
 
   const setButtonArticle = articleKey => {
     if (articleKey) {
