@@ -15,6 +15,7 @@ const TicketsPanel = ({ tickets }) => {
           totalPages={5}
           currentPage={1}
         />
+        <hr />
         {
           tickets.map((ticket, index) => <div>
             <Button stretched basic> {ticket.title} </Button>
