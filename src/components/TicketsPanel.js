@@ -1,21 +1,27 @@
+import '@zendeskgarden/react-pagination/dist/styles.css';
+import '@zendeskgarden/react-buttons/dist/styles.css';
+
+import { Button } from '@zendeskgarden/react-buttons';
+import { Pagination } from '@zendeskgarden/react-pagination';
 import { Sidebar } from '@zendeskgarden/react-chrome';
+import { ThemeProvider } from '@zendeskgarden/react-theming';
 import React from 'react';
 
-const TicketsPanel = () => {
+const TicketsPanel = ({ tickets }) => {
   return (
-    <Sidebar style={{ padding: 28 }}>
-      <h2>Example Sidebar</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum.
-      </p>
-    </Sidebar>
+    <ThemeProvider>
+      <Sidebar style={{ padding: 28 }}>
+        <Pagination
+          totalPages={5}
+          currentPage={1}
+        />
+        {
+          tickets.map((ticket, index) => <div>
+            <Button stretched basic> {ticket.title} </Button>
+          </div>)
+        }
+      </Sidebar>
+    </ThemeProvider>
   );
 };
 
