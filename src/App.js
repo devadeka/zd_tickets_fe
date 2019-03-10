@@ -26,11 +26,11 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get(`https://support.zendesk.com/api/v2/help_center/en-us/articles.json?per_page=10&page${articlesData.page}`)
+      .get(`https://support.zendesk.com/api/v2/help_center/en-us/articles.json?per_page=10&page=${articlesData.page}`)
       .then(response => setArticlesData(response.data))
       .then(response => console.log(articlesData.page))
       .catch(error => console.log(error));
-  }, []);
+  }, [articlesData.page]);
 
   return (
     <Chrome className="App">

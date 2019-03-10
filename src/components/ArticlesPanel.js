@@ -32,11 +32,13 @@ const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) =>
 
   return (
     <ThemeProvider>
-      <Sidebar style={{ padding: 28 }}>
+      <Sidebar style={{ padding: 28, minWidth: 450 }}>
         <Pagination
+          stretched
           currentPage={articlesData.page}
           totalPages={articlesData.page_count}
           onChange={currentPage => setPageNumber(currentPage)}
+          pagePadding={1}
         />
         <hr />
         <ButtonGroup
