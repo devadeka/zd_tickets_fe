@@ -1,6 +1,6 @@
 import { Button } from '@zendeskgarden/react-buttons';
 import { Pagination } from '@zendeskgarden/react-pagination';
-import { render } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import TicketsPanel from '../components/TicketsPanel';
 
@@ -10,7 +10,7 @@ describe('<TicketDetailView />', () => {
   const tickets = [1, 2, 4].map(ticketNum => ({ title: `Ticket ${ticketNum}` }));
 
   beforeEach( () => {
-    ticketsPanel = render(<TicketsPanel tickets={tickets} />);
+    ticketsPanel = mount(<TicketsPanel tickets={tickets} />);
   });
 
   it('contains a <Pagination />', () => {
@@ -22,6 +22,6 @@ describe('<TicketDetailView />', () => {
   });
   
   it('displays correct ticket information on button', () => {
-    expect(ticketsPanel.find(Button).first.text()).toEqual('Ticket 1');
+    expect(ticketsPanel.find(Button).first().text()).toEqual('Ticket 1');
   });
 });

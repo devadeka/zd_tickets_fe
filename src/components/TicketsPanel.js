@@ -18,7 +18,7 @@ const TicketsPanel = ({ tickets }) => {
         <hr />
         {
           tickets.map((ticket, index) => <div>
-            <Button stretched basic> {ticket.title} </Button>
+            <Button stretched basic>{ticket.title}</Button>
           </div>)
         }
       </Sidebar>
