@@ -5,7 +5,6 @@ import { Button } from '@zendeskgarden/react-buttons';
 import { Pagination } from '@zendeskgarden/react-pagination';
 import { Sidebar } from '@zendeskgarden/react-chrome';
 import { ThemeProvider } from '@zendeskgarden/react-theming';
-
 import React from 'react';
 
 const TicketsPanel = ({ tickets }) => {
