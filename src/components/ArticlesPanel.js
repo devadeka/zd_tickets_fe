@@ -1,5 +1,6 @@
 import '@zendeskgarden/react-pagination/dist/styles.css';
 import '@zendeskgarden/react-buttons/dist/styles.css';
+import '../App.css';
 
 import { Button, ButtonGroup } from '@zendeskgarden/react-buttons';
 import { Pagination } from '@zendeskgarden/react-pagination';
@@ -30,7 +31,7 @@ const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) =>
 
   return (
     <ThemeProvider>
-      <Sidebar style={{ padding: 28, minWidth: 450 }}>
+      <Sidebar className='Content-Panel Articles-Panel'>
         <Pagination
           stretched
           currentPage={articlesData.page}
@@ -42,7 +43,7 @@ const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) =>
         <ButtonGroup
           selectedKey={selectedKey}
           onStateChange={newState => setButtonArticle(newState.selectedKey)}
-          style={{ display: 'flex', flexDirection: 'column'}}
+          className='Articles-Button-Group'
         >
           {articlesData
             .articles

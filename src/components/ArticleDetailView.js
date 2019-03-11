@@ -1,10 +1,11 @@
 import { Main } from '@zendeskgarden/react-chrome';
 import React from 'react';
+import '../App.css';
 
 const ArticleDetailView = ({ selectedArticle }) => {
   return (
-    <Main style={{ padding: 28 }}>
-      <h2 style={{ marginTop: 0 }}>{ selectedArticle.title }</h2>
+    <Main className='Content-Panel'>
+      <h2 className='Detail-Title'>{ selectedArticle.title }</h2>
       <hr />
       <p dangerouslySetInnerHTML={{ __html: selectedArticle.body }}></p>
     </Main>
