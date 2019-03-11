@@ -10,7 +10,7 @@ import { ThemeProvider } from '@zendeskgarden/react-theming';
 import React, { useState } from 'react';
 
 const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) => {
-  const [selectedKey, setSelectedKey] = useState('-1');
+  const [selectedKey, setSelectedKey] = useState(null);
 
   const setPageNumber = pageNumber => setArticlesData({
     page: pageNumber,
@@ -20,7 +20,7 @@ const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) =>
 
   const getArticleFromIdString = idString => articlesData
     .articles
-    .filter(article => article.id === Number.parseInt(idString, 10))[0];
+    .find(article => article.id === Number.parseInt(idString, 10));
 
   const setButtonArticle = articleKey => {
     if (articleKey) {
@@ -47,12 +47,15 @@ const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) =>
         >
           {articlesData
             .articles
-            .map(article => <Button 
-              key={ `${article.id}` }
-              stretched
-              basic>
-                {article.title}
-              </Button>)}
+            .map(article => {
+	      return <Button 
+                key={ `${article.id}` }
+                stretched
+                basic>
+                  {article.title}
+              </Button>
+	    })
+	  }
         </ButtonGroup>
       </Sidebar>
     </ThemeProvider>
