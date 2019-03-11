@@ -5,7 +5,7 @@ const TitleBar = () => {
   return (
     <Header>
       <HeaderItemWrapper maxX>
-        <h1>Zendesk Article Viewer</h1>
+        <h1>Zendesk FAQs</h1>
       </HeaderItemWrapper>
     </Header>
   );
