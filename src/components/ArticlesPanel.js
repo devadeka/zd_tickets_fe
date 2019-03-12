@@ -20,7 +20,7 @@ const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) =>
 
   const getArticleFromIdString = idString => articlesData
     .articles
-    .find(article => article.id === Number.parseInt(idString, 10));
+    .find(article => article.external_id === Number.parseInt(idString, 10));
 
   const setButtonArticle = articleKey => {
     if (articleKey) {
@@ -49,7 +49,7 @@ const ArticlesPanel = ({ articlesData, setArticlesData, setSelectedArticle }) =>
             .articles
             .map(article => {
 	      return <Button 
-                key={ `${article.id}` }
+                key={ `${article.external_id}` }
                 stretched
                 basic>
                   {article.title}

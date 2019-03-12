@@ -12,7 +12,7 @@ describe('<ArticleDetailView />', () => {
   const setSelectedArticle = jest.fn();
 
   const articles = [1, 2, 3].map(elem => ({
-    id: elem,
+    external_id: elem,
     title: `Article ${elem}`,
     body: '...'
   }));

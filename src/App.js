@@ -8,11 +8,14 @@ import axios from 'axios';
 
 
 const App = () => {
-  const domain = 'https://support.zendesk.com';
-  const path = '/api/v2/help_center/en-us/articles.json';
+  // const domain = 'https://support.zendesk.com';
+  // const path = '/api/v2/help_center/en-us/articles.json';
+
+  const domain = 'http://192.168.0.106:3030/';
+  const path = '/articles';
 
   const articles = [1, 2, 3].map(elem => ({
-    id: elem,
+    external_id: elem,
     title: 'Loading...',
     body: '...'
   }));
