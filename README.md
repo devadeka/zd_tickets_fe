@@ -1,4 +1,4 @@
-# Zendesk Article Viewer
+# Zendesk FAQs
 
 ## Task
 Create a front end application that will consume Zendesks FAQs API. The application is to list all available articles for the user to select and view in detail.
