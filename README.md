@@ -1,11 +1,11 @@
 # Zendesk FAQs
 
 ## Task
-Create an application that will list all available articles for the user to select and view in detail. The [front end](https://github.com/devadeka/zd_tickets_fe) application will need to talk to a [proxy API](https://github.com/devadeka/zd_tickets_be) that caches data from Zendesk's FAQs API for an hour.
+Create an application that will list all available articles for the user to select and view in detail. The [frontend](https://github.com/devadeka/zd_tickets_fe) application will need to talk to a [proxy API](https://github.com/devadeka/zd_tickets_be) that caches data from Zendesk's FAQs API for an hour.
 
 Ensure the backend is running before the frontend.
 
-The finished product can be viewed on [Zendesk FAQs](https://agitated-varahamihira-3662cf.netlify.com/). This skips the proxy API and connects directly to Zendesk's FAQs API.
+The finished product can be viewed on [Zendesk FAQs](https://agitated-varahamihira-3662cf.netlify.com/) and can also be installed from npm as a [react component](https://www.npmjs.com/package/zd_faqs). This skips the proxy API and connects directly to Zendesk's FAQs API.
 
 ## Technology Used
 The application was developed on `Ubuntu 18.04`
@@ -17,6 +17,8 @@ Modules and Libraries used:
 - [Axios](https://github.com/axios/axios) - HTTP client
 - [Enzyme](https://github.com/airbnb/enzyme)/Jest - testing
 - [Zendesk Garden React Components](https://github.com/zendeskgarden/react-components) - component library
+- [Babel](https://github.com/babel) - Transpiler
+- [Webpack](https://github.com/webpack) - Bundler
 
 ## Installation
 First clone repository.
@@ -34,7 +36,43 @@ After cloning and installing dependencies.
 
 ## Running
 After cloning and installing dependencies.
-Ensure internet connection is available as the application makes calls to external APIs.
+Ensure backend application is running.
+
+`npm start`
+
+## Building Static Files
+Building static files/output of the front end application was done on a separate branch.
+
+Checkout the branch
+
+`git checkout publish_main`
+
+Clean install node modules
+
+`rm -rf node_modules`
+
+`npm install`
+
+Build static file
+
+`npm run build`
+
+To view the built frontend application, ensure proxyAPI/backend application is running, and then open `dist/index.html`.
+
+## Frontend Only Application
+To run only the frontend application - talking directly to the Zendesk's FAQs API, without the proxyAPI/backend application.
+
+Checkout the branch
+
+`git checkout fe_only`
+
+Clean install node modules
+
+`rm -rf node_modules`
+
+`npm install`
+
+Run application
 
 `npm start`
 
@@ -43,5 +81,3 @@ The main design decision came in the form of what content to request from the pr
 
 ## Improvements
 Currently the application manages state by passing props from base component down to children components. A better practice may be to use ReactHooks version of Redux. Though for a small application like this it may not be necessary.
-
-Visually the application works on a desktop but is not responsive. Further design work needs to be done to make it more mobile friendly.
