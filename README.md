@@ -1,4 +1,4 @@
-# Zendesk Article Viewer
+# Zendesk FAQs
 
 ## Task
 Create an application that will list all available articles for the user to select and view in detail. The [front end](https://github.com/devadeka/zd_tickets_fe) application will need to talk to a [proxy API](https://github.com/devadeka/zd_tickets_be) that caches data from Zendesk's FAQs API for an hour.
