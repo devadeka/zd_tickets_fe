@@ -5,7 +5,7 @@ Create an application that will list all available articles for the user to sele
 
 Ensure the backend is running before the frontend.
 
-The finished product can be viewed on [Zendesk FAQs](https://agitated-varahamihira-3662cf.netlify.com/). This skips the proxy API and connects directly to Zendesk's FAQs API.
+The finished product can be viewed on [Zendesk FAQs](https://agitated-varahamihira-3662cf.netlify.com/) and can also be installed from npm as a [react component](https://www.npmjs.com/package/zd_faqs). This skips the proxy API and connects directly to Zendesk's FAQs API.
 
 ## Technology Used
 The application was developed on `Ubuntu 18.04`
