@@ -40,7 +40,7 @@ const App = () => {
     <Chrome className="App">
       <Body>
         <TitleBar />
-        <Content>
+        <Content className="Content">
           <ArticlesPanel
             articlesData={ articlesData }
             setArticlesData={ setArticlesData }
