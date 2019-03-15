@@ -1,9 +1,8 @@
-import { Pagination, Page } from '@zendeskgarden/react-pagination';
-import ArticlesPanel from '../components/ArticlesPanel';
+import { Page, Pagination } from '@zendeskgarden/react-pagination';
 import { Button } from '@zendeskgarden/react-buttons';
-import React from 'react';
 import { mount } from 'enzyme';
-
+import ArticlesPanel from '../components/ArticlesPanel';
+import React from 'react';
 
 describe('<ArticleDetailView />', () => {
   let articlesPanel;
@@ -49,7 +48,7 @@ describe('<ArticleDetailView />', () => {
     expect(setSelectedArticle.mock.calls.length).toBe(1);
   });
 
-  it('updates page number when next page clicked', () =>{
+  it('updates page number when next page clicked', () => {
     articlesPanel.find(Page).last().simulate('click');
     expect(setArticlesData.mock.calls.length).toBe(1);
   });

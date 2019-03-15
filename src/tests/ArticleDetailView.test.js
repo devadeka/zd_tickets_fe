@@ -1,6 +1,6 @@
+import { shallow } from 'enzyme';
 import ArticleDetailView from '../components/ArticleDetailView';
 import React from 'react';
-import { shallow } from 'enzyme';
 
 describe('<ArticleDetailView />', () => {
   let articleDetailView;

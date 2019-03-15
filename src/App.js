@@ -3,9 +3,8 @@ import {Body, Chrome, Content} from '@zendeskgarden/react-chrome';
 import React, { useState, useEffect } from 'react';
 import ArticleDetailView from './components/ArticleDetailView';
 import ArticlesPanel from './components/ArticlesPanel';
-import TitleBar from './components/TitleBar';
 import axios from 'axios';
-
+import TitleBar from './components/TitleBar';
 
 const App = () => {
   const domain = 'http://localhost:3030';
