@@ -37,19 +37,21 @@ const App = () => {
   }, [articlesData.page]);
 
   return (
-    <Chrome className="App">
-      <Body>
-        <TitleBar />
-        <Content className="Content">
-          <ArticlesPanel
-            articlesData={ articlesData }
-            setArticlesData={ setArticlesData }
-            setSelectedArticle={ setSelectedArticle }
-          />
-          <ArticleDetailView selectedArticle={ selectedArticle } />
-        </Content>
-      </Body>
-    </Chrome>
+    <div>
+      <Chrome className="App">
+        <Body>
+          <TitleBar />
+          <Content className="Content">
+            <ArticlesPanel
+              articlesData={ articlesData }
+              setArticlesData={ setArticlesData }
+              setSelectedArticle={ setSelectedArticle }
+            />
+            <ArticleDetailView selectedArticle={ selectedArticle } />
+          </Content>
+        </Body>
+      </Chrome>
+    </div>
   );
 };
 
