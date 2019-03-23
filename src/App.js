@@ -29,7 +29,7 @@ const App = () => {
   });
 
   useEffect(() => {
-    const query = `?per_page=10&page=${articlesData.page}`;
+    const query = `?per_page=10&page=${articlesData.page}&sort_by=title&order=asc`;
 
     axios
       .get(`${domain}${path}${query}`)
